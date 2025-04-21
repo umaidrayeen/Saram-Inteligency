@@ -1,48 +1,67 @@
-import React from "react";
-import Navbar from "../NavBar";
-import Footer from '../Footer';
-import sun from '../images/bg-image.png';
+import social from '../images/socials.png';
+import { Link } from 'react-router-dom';
 
-const Home = () => {
-    return (
-      <section className="bg-black pb-8 h-screen w-full ">
-        <Navbar/>
-        <div className="flex justify-between">
-        <div className="max-w-4xl pl-16 pt-14 mt-14">
-          <h1 className="text-6xl font-senif font-semibold leading-tight text-white">
-            Listens, Engages,<br />and Personalizes
-          </h1>
-          <p className="mt-4 text-lg text-gray-300">
-            For smart communication, customer engagement,<br />
-            and personalized automation.
-          </p>
-          <button className="mt-6 bg-white text-black px-6 py-2 rounded-full hover:bg-gray-200 transition">
-            Try for Free
-          </button>
-        </div>
+function Footer(){
+    return(
+        <footer class="bg-black text-white py-12 px-16 ">
 
-        <div className="w-2/5 ">
-            <img src={sun} className="mt-14" />
+            <div>
+                {/* <!-- Branding --> */}
+                <div class="mb-10 mt-10">
+                    <h1 class="text-5xl font-bold">SARAM</h1>
+                    <p class="mt-2 text-xl font-semibold text-gray-300">Powering Conversations with Intelligence</p>
+                    <img src={social} className='w-4/6 mt-6' />
+                </div>
+            </div>
+            <div class="max-w-8xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16 py-4">
+                {/* <!-- Company Links --> */}
+                <div>
+                    <h3 class="font-semibold mb-2">Company</h3>
+                    <ul class="space-y-1 text-sm text-gray-400">
+                        <li><Link to='/about'>About Us</Link></li>
+                        <li><Link to='/features'>Features</Link></li>
+                        <li><Link to='/why-saram'>Why Saram</Link></li>
+                    </ul>
+                </div>
+
+                {/* <!-- Features --> */}
+                <div>
+                    <h3 class="font-semibold mb-2">Features</h3>
+                    <ul class="space-y-1 text-sm text-gray-400">
+                        <li><a href="#">AI Chatbot</a></li>
+                        <li><a href="#">AI Voice Assistant</a></li>
+                        <li><a href="#">AI Personalization Engine</a></li>
+                        <li><a href="#">AI Email & Marketing Automation</a></li>
+                    </ul>
+                </div>
+
+                {/* Learn More */}
+                <div>
+                    <h3 class="font-semibold mb-2">Learn More</h3>
+                    <ul class="space-y-1 text-sm text-gray-400">
+                        <li><Link to='/faq'>FAQ</Link></li>
+                        <li><Link to='/pricing'>Pricing</Link></li>
+                    </ul>
+                </div>
+
+                {/* Others */}
+                <div>
+                    <h3 class="font-semibold mt-4 mb-2">Others</h3>
+                    <ul class="space-y-1 text-sm text-gray-400">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Condition</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        {/* <!-- Copyright --> */}
+        <div class="text-center text-sm text-gray-500 mt-10">
+            © 2025 Patroon, Inc.
         </div>
-        </div>
-  
-        {/* Ratings */}
-        <div className="pl-16 flex items-center space-x-2">
-        <div className="flex -space-x-2">
-          <div className="w-10 h-10 rounded-full bg-gray-400" />
-          <div className="w-10 h-10 rounded-full bg-gray-400" />
-          <div className="w-10 h-10 rounded-full bg-gray-400" />
-        </div>
-        <div className="text-1xl">
-          <span className="text-yellow-400 text-2xl">★★★★★</span><br />
-          <span className="text-white">4.8/5 (500k+ reviews)</span>
-        </div>
-      </div>
-      <Footer/>
-    </section>
-    
-    );
-  };
-  
-  export default Home;
-  
+    </footer>
+
+    )
+}
+
+export default Footer
